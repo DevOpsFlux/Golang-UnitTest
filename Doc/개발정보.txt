@@ -1,0 +1,100 @@
+
+go vergion
+go env
+
+go build main.go
+go run main.go
+
+----------------------------------------------------------------------
+# 패키지 생성
+/src/stringutil/stringutil.go
+go install stringutil
+
+GOPATH/pkg/운영체제_아키텍처 디렉터리에 stringutil.a 라이브러리 파일이 생성
+
+리눅스: GOPATH/pkg/linux_amd64
+Mac OS X: GOPATH/pkg/darwin_amd64
+Windows: GOPATH/pkg/windows_amd64/calc.a
+
+import (
+	"stringutil"
+)
+
+----------------------------------------------------------------------
+# gcc 사용법
+> gcc devgo.go -o "gcc_out.exe"
+
+----------------------------------------------------------------------
+# 라이브러리 사용
+go get -u github.com/gin-gonic/gin
+go get -u github.com/gocolly/colly
+go get -u github.com/dustin/go-humanize
+go get -u github.com/go-redis/redis
+
+----------------------------------------------------------------------
+# go git 패키지 다운
+D:\Works\Go\src>go get -u github.com/go-redis/redis
+D:\Works\Go\src>go get -u github.com/go-redis/redis/v8
+----------------------------------------------------------------------
+
+# gin 패키지관리 govendor 설치
+- https://mmsesang.tistory.com/7
+$ go get github.com/kardianos/govendor
+$ govendor init
+$ govendor fetch github.com/gin-gonic/gin@v1.3
+
+
+gin 의 main.go starting template
+https://raw.githubusercontent.com/gin-gonic/examples/master/basic/main.go
+ 
+# go 바이너리 실행 파일 생성
+> go build devgo.go
+> devgo.exe
+
+================================================================================================================================
+
+Tools environment: GOPATH=D:\Works\Go\, GOBIN=C:\Go\bin
+Installing 16 tools at the configured GOBIN: C:\Go\bin in module mode.
+  gocode
+  gopkgs
+  go-symbols
+  guru
+  gorename
+  gotests
+  gomodifytags
+  impl
+  fillstruct
+  goplay
+  godoctor
+  dlv
+  gocode-gomod
+  godef
+  goreturns
+  golint
+
+D:\Works\Go\src>Finished running tool: C:\Go\bin\go.exe vet .
+D:\Works\Go\src\hello.go:5: main redeclared in this block
+D:\Works\Go\src\logs.go:10: main redeclared in this block
+D:\Works\Go\src\main.go:5: main redeclared in this block
+D:\Works\Go\src\readfile.go:5: main redeclared in this block
+
+Installing github.com/mdempsky/gocode SUCCEEDED
+Installing github.com/uudashr/gopkgs/v2/cmd/gopkgs SUCCEEDED
+Installing github.com/acroca/go-symbols SUCCEEDED
+Installing golang.org/x/tools/cmd/guru SUCCEEDED
+Installing golang.org/x/tools/cmd/gorename SUCCEEDED
+Installing github.com/cweill/gotests/... SUCCEEDED
+Installing github.com/fatih/gomodifytags SUCCEEDED
+Installing github.com/josharian/impl SUCCEEDED
+Installing github.com/davidrjenni/reftools/cmd/fillstruct SUCCEEDED
+Installing github.com/haya14busa/goplay/cmd/goplay SUCCEEDED
+Installing github.com/godoctor/godoctor SUCCEEDED
+Installing github.com/go-delve/delve/cmd/dlv SUCCEEDED
+Installing github.com/stamblerre/gocode SUCCEEDED
+Installing github.com/rogpeppe/godef SUCCEEDED
+Installing github.com/sqs/goreturns SUCCEEDED
+Installing golang.org/x/lint/golint SUCCEEDED
+
+All tools successfully installed. You are ready to Go :).
+
+================================================================================================================================
