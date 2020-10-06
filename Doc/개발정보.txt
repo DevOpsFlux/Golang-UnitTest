@@ -1,11 +1,27 @@
 
-go vergion
+go vergion [ go1.22.3 -> 업그레이드(의존성이슈), go1.15.2 windows/amd64 ]
 go env
 
 go build main.go
 go run main.go
 
+
+go get -u github.com/gin-gonic/gin
+go get -u github.com/gocolly/colly
+go get -u github.com/dustin/go-humanize
+go get -u github.com/go-redis/redis
+go get -u github.com/labstack/echo
+go get -u github.com/PuerkitoBio/goquery
+
+go get -u github.com/swaggo/swag/cmd/swag
+go get -u github.com/swaggo/echo-swagger
+
 ----------------------------------------------------------------------
+# go git 패키지 다운
+D:\Works\Go\src>go get -u github.com/go-redis/redis
+D:\Works\Go\src>go get -u github.com/go-redis/redis/v8
+----------------------------------------------------------------------
+
 # 패키지 생성
 /src/stringutil/stringutil.go
 go install stringutil
@@ -20,21 +36,6 @@ import (
 	"stringutil"
 )
 
-----------------------------------------------------------------------
-# gcc 사용법
-> gcc devgo.go -o "gcc_out.exe"
-
-----------------------------------------------------------------------
-# 라이브러리 사용
-go get -u github.com/gin-gonic/gin
-go get -u github.com/gocolly/colly
-go get -u github.com/dustin/go-humanize
-go get -u github.com/go-redis/redis
-
-----------------------------------------------------------------------
-# go git 패키지 다운
-D:\Works\Go\src>go get -u github.com/go-redis/redis
-D:\Works\Go\src>go get -u github.com/go-redis/redis/v8
 ----------------------------------------------------------------------
 
 # gin 패키지관리 govendor 설치
