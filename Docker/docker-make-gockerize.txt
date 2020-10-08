@@ -1,0 +1,71 @@
+
+# 초경량 Golang Docker 이미지 만들기
+- Scratch 이미지를 이용한 경량화 방법
+
+https://lynlab.co.kr/blog/64
+Dockerize
+
+----------------------------------------------------------------------------------------
+// main.go
+package main
+
+import(
+    "fmt"
+    "time"
+)
+
+func main() {
+    for {
+        fmt.Println("Hello, world!")
+        time.Sleep(10 * time.Second)
+    }
+}
+
+---------------------------------------------------------------------------------
+[ 842 MB ]
+
+FROM golang:1.15.2
+WORKDIR /usr/src/app
+COPY . .
+CMD ["main"]
+
+docker build -t fluxdev/mydk-go-light:v1.0 .
+docker push fluxdev/mydk-go-light:v1.0
+docker images
+docker pull fluxdev/mydk-go-light:v1.0
+docker images
+docker rmi c1cedb663d75
+docker pull fluxdev/mydk-go-light:v1.0
+docker images
+
+---------------------------------------------------------------------------------
+[ 219 B ]
+cp main.go ../lightgo2/main.go
+
+FROM scratch
+WORKDIR /usr/src/app
+COPY . .
+CMD ["main"]
+
+docker build -t fluxdev/mydk-go-light2:v1.0 .
+docker push fluxdev/mydk-go-light2:v1.0
+
+docker run -it --name mydk-go-light:v1.0 mydk-go-light
+docker images
+
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -ldflags '-w -s' -o main main.go
+
+
+
+
+https://groups.google.com/d/msg/golang-korea/bP3ejliyiqQ/igHLKFBfX1gJ
+
+Scratch를 베이스 이미지로 삼기 위해서는, 우선 go build 명령어를 실행할 때 약간(?)의 변화를 주어야합니다.
+
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -ldflags '-s' -o main main.go
+굉장히 복잡해보이는데요, 차근차근 살펴보면
+
+CGO_ENABLED=0 : cgo를 사용하지 않습니다. Scratch 이미지에는 C 바이너리조차 없기 때문에, 반드시 cgo를 비활성화 후 빌vi드해야합니다.
+GOOS=linux GOARCH=amd64 : OS와 아키텍쳐 설정입니다.
+-a : 모든(all) 의존 패키지를 cgo를 사용하지 않도록 재빌드합니다.
+-ldflags '-s' : 바이너리를 조금 더 경량화하는 Linker 옵션입니다
