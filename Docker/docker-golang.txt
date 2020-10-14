@@ -1,0 +1,25 @@
+***
+# Docker Go 설정
+
+XX docker run -it -v ${PWD}:/var/app/go --name mygo golang /bin/bash
+XXdocker run -it -v ${PWD}:/go --name mygo golang /bin/bash
+docker run -it -v ${PWD}:/go/src --name mygo golang /bin/bash
+
+docker exec -it mygo /bin/bash
+
+## go git 패키지 다운
+ src> go get -u github.com/go-redis/redis
+
+ [issue] go get gopkg > x509:certificate.....
+ https://github.com/golang/go/issues/18519
+ src> go get -u -v -insecure github.com/go-redis/redis
+ src> go get -u -v -insecure github.com/go-redis/redis/v8
+
+	go get -u -v -insecure go.opentelemetry.io
+	go get -u -v -insecure go.opentelemetry.io/otel
+	go get -u -v -insecure github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace
+
+### git 에서 https repository 연결시 SSL 인증서 오류 해결법
+ git config --global http.sslVerify false
+ git config --global http.https://git.vertiv.life.sslVerify false
+ export GIT_SSL_NO_VERIFY=0

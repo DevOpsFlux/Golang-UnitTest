@@ -6,6 +6,16 @@ go build main.go
 go run main.go
 
 
+ [issue] go get gopkg > x509:certificate.....
+ https://github.com/golang/go/issues/18519
+ src> go get -u -v -insecure github.com/go-redis/redis
+ src> go get -u -v -insecure github.com/go-redis/redis/v8
+ src> go get -u -v -insecure go.opentelemetry.io
+
+go get -u -v -insecure go.opentelemetry.io
+go get -u -v -insecure go.opentelemetry.io/otel
+go get -u -v -insecure github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace
+
 go get -u github.com/gin-gonic/gin
 go get -u github.com/gocolly/colly
 go get -u github.com/dustin/go-humanize
