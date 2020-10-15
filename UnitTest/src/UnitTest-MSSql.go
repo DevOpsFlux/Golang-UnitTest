@@ -96,7 +96,7 @@ func test() {
 	/*
 		// sql.DB 객체
 		// db, err := sql.Open("mssql", "server=(local);user id=sa;password=pwd;database=pubs")
-		db, err := sql.Open("mssql", "server=172.25.5.205;user id=N08704;password=@NTN08704;database=Ticket2000")
+		db, err := sql.Open("mssql", "server=127.0.0.1;user id=dev;password=@NTdev;database=devdb")
 		if err != nil {
 			log.Fatal(err)
 		}
