@@ -1,10 +1,20 @@
 ***
 ## go - Setup
+- go vergion [ go1.22.3 -> 업그레이드(의존성이슈), go1.15.2 windows/amd64 ]
 - https://golang.org/dl/
 
 ## go path - Set
 - Path, GoBin, GoRoot, GoPath
 
+## go get
+- git package download
+```
+ go get -u github.com/go-redis/redis
+
+ [issue] go get gopkg > x509:certificate.....
+ https://github.com/golang/go/issues/18519
+ go get -u -v -insecure github.com/go-redis/redis
+```
 ## go mod
 - Go modules
 https://tutorialedge.net/golang/go-modules-tutorial/
@@ -16,6 +26,18 @@ go mod tidy : 불필요한 종속성 제거
 ```
  choco install make
  make -v
+```
+## godoc
+```
+ godoc -v
+ godoc -http=localhost:6060
+ http://localhost:6060/pkg/
+ Go Documentation Server
+```
+## go 바이너리 실행 파일 생성
+```
+ go build devgo.go
+ devgo.exe
 ```
 
 ***
