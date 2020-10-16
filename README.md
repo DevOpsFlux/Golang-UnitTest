@@ -1,15 +1,15 @@
 ****
-# go ¼³Ä¡
+# go ì„¤ì¹˜
 - https://golang.org/dl/
 
-# go path ¼³Á¤
+# go path ì„¤ì •
 - Path, GoBin, GoRoot, GoPath
 
 # go mod
 - Go modules
 https://tutorialedge.net/golang/go-modules-tutorial/
-go list -m all : ÃÖÁ¾ ¹öÀüÀÇ Á÷°£Á¢ÀûÀÎ µğÆæ´õ½Ã ¸®½ºÆ®
-go mod tidy : ºÒÇÊ¿äÇÑ Á¾¼Ó¼º Á¦°Å
+go list -m all : ìµœì¢… ë²„ì „ì˜ ì§ê°„ì ‘ì ì¸ ë””íœë”ì‹œ ë¦¬ìŠ¤íŠ¸
+go mod tidy : ë¶ˆí•„ìš”í•œ ì¢…ì†ì„± ì œê±°
 
 # go make 
 - https://tutorialedge.net/golang/makefiles-for-go-developers/
@@ -31,16 +31,16 @@ https://github.com/pangpanglabs/echosample
 
 
 ****
-# Windows VSCode¸¦ ÅëÇÑ Go °³¹ß È¯°æ ±¸Ãà
+# Windows VSCodeë¥¼ í†µí•œ Go ê°œë°œ í™˜ê²½ êµ¬ì¶•
 https://velog.io/@ilcm96/windows-go-dev-env-setup-with-vscode
 
-# Plugin Á¤º¸
-GoDoc, GoDocBrowser : ÆĞÅ°Áö ¹®¼­ Å½Çè
-GoRename : ÀÌ¸§ º¯°æ
-GoCoverage : Å×½ºÆ® Ä¿¹ö¸®Áö ÃøÁ¤
-GoLint : ¿À·ù °Ë»ç
-GoVert : Á¤Àû ¿À·ù Å½Áö
-GoErrCheck : ¿À·ù °Ë»ç
-GoImplements, GoCallees, GoReferrers : °í±Ş ºĞ¼® µµ±¸
+# Plugin ì •ë³´
+GoDoc, GoDocBrowser : íŒ¨í‚¤ì§€ ë¬¸ì„œ íƒí—˜
+GoRename : ì´ë¦„ ë³€ê²½
+GoCoverage : í…ŒìŠ¤íŠ¸ ì»¤ë²„ë¦¬ì§€ ì¸¡ì •
+GoLint : ì˜¤ë¥˜ ê²€ì‚¬
+GoVert : ì •ì  ì˜¤ë¥˜ íƒì§€
+GoErrCheck : ì˜¤ë¥˜ ê²€ì‚¬
+GoImplements, GoCallees, GoReferrers : ê³ ê¸‰ ë¶„ì„ ë„êµ¬
 
 ****
