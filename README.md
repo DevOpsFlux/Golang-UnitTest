@@ -8,7 +8,7 @@
 
 ## go get
 - git package download
-```
+```bash
  go get -u github.com/go-redis/redis
 
  [issue] go get gopkg > x509:certificate.....
@@ -23,21 +23,31 @@ go mod tidy : 불필요한 종속성 제거
 
 ## go make 
 - https://tutorialedge.net/golang/makefiles-for-go-developers/
-```
+```bash
  choco install make
  make -v
 ```
 ## godoc
-```
+```bash
  godoc -v
  godoc -http=localhost:6060
  http://localhost:6060/pkg/
  Go Documentation Server
 ```
 ## go 바이너리 실행 파일 생성
-```
+```bash
  go build devgo.go
  devgo.exe
+```
+## docker-compose
+- https://docs.docker.com/compose/
+- docker-compose.yml
+```bash
+docker-compose up --build -d
+docker-compose ps
+docker-compose stop
+docker-compose start
+docker-compose down
 ```
 
 ***
