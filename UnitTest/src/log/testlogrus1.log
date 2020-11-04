@@ -1,0 +1,2 @@
+{"Animal":"Logrus","level":"info","msg":"A logrus appears","time":"2020-11-04T17:31:28+09:00"}
+{"level":"info","msg":"logrus Unit Test","time":"2020-11-04T17:31:28+09:00"}
