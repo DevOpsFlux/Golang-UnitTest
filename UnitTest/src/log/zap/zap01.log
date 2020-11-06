@@ -1,0 +1,2 @@
+2020-11-06T12:31:07.598+0900	INFO	zap/zaplog-test.go:38	failed to Process	{"err": "null exception", "attempt": 3, "duration": "1s"}
+2020-11-06T12:31:19.444+0900	INFO	zap/zaplog-test.go:38	failed to Process	{"err": "null exception", "attempt": 3, "duration": "1s"}
