@@ -61,6 +61,17 @@ https://github.com/gin-gonic/examples
 https://github.com/labstack/echo
 https://github.com/pangpanglabs/echosample
 
+## Go Log Library
+
+- logrus vs zap
+https://go.libhunt.com/compare-logrus-vs-zap
+- logrus
+https://github.com/sirupsen/logrus
+https://godoc.org/github.com/sirupsen/logrus
+- zap
+https://github.com/uber-go/zap
+https://godoc.org/go.uber.org/zap
+
 
 ***
 ## Windows VSCode를 통한 Go 개발 환경 구축
