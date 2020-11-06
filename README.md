@@ -63,7 +63,7 @@ https://github.com/pangpanglabs/echosample
 
 ## Go Log Library
 
-- logrus vs zap
+- logrus vs zap 
 https://go.libhunt.com/compare-logrus-vs-zap
 - logrus
 https://github.com/sirupsen/logrus
@@ -74,7 +74,7 @@ https://godoc.org/go.uber.org/zap
 
 
 ***
-## Windows VSCode를 통한 Go 개발 환경 구축
+## Windows VSCode를 통한 Go 개발 환경 구축 
 https://velog.io/@ilcm96/windows-go-dev-env-setup-with-vscode
 
 ## Plugin 정보
