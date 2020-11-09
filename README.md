@@ -51,6 +51,11 @@ docker-compose down
 ```
 
 ***
+## go clean architecture
+- go-clean-arch
+- 4 Domain layer : Models, Repository, Usecase, Delivery 
+https://github.com/bxcodec/go-clean-arch
+
 ## Go Web Framework
 
 - Gin
@@ -77,6 +82,14 @@ https://godoc.org/github.com/sirupsen/logrus
 - zap
 https://github.com/uber-go/zap
 https://godoc.org/go.uber.org/zap
+
+
+## Go Process Manager
+https://www.reddit.com/r/golang/comments/dkl2xd/process_manager_written_in_go/
+https://github.com/skanehira/pst
+https://github.com/struCoder/pmgo
+https://github.com/goreleaser/nfpm
+https://github.com/nakabonne/gosivy
 
 
 ***
