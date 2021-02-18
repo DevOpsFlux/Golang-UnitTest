@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	data, err := os.Create("log/logtest.log")
+	data, err := os.Create("./logs/logrus-logtest-20210217.log")
 	if err != nil {
 		fmt.Println(err)
 	}

@@ -10,7 +10,7 @@ import (
 func init() {
 
 	// open a file
-	f, err := os.OpenFile("log/logrus-test.log", os.O_APPEND|os.O_CREATE|os.O_RDWR, 0666)
+	f, err := os.OpenFile("./logs/logrus-test.log", os.O_APPEND|os.O_CREATE|os.O_RDWR, 0666)
 	if err != nil {
 		fmt.Printf("error opening file: %v", err)
 	}

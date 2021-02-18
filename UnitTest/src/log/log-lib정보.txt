@@ -1,0 +1,17 @@
+
+
+# go-file-logging-benchmark-log-vs-logrus-vs-zap
+https://medium.com/@bless2k/go-file-logging-benchmark-log-vs-logrus-vs-zap-1b4fef9a7ba6
+
+# Go Log Library
+logrus vs zap https://go.libhunt.com/compare-logrus-vs-zap
+
+# logrus 
+https://github.com/sirupsen/logrus 
+https://godoc.org/github.com/sirupsen/logrus
+https://github.com/gogap/logrus_mate
+https://github.com/heirko/go-contrib/tree/master/logrusHelper
+
+#zap 
+https://github.com/uber-go/zap 
+https://godoc.org/go.uber.org/zap
