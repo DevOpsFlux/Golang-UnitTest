@@ -20,6 +20,8 @@
 https://tutorialedge.net/golang/go-modules-tutorial/
 go list -m all : 최종 버전의 직간접적인 디펜더시 리스트
 go mod tidy : 불필요한 종속성 제거
+go mod vendor	# vendor 디렉토리를 만드는 옵션커맨드
+go get -u -v -insecure github.com/shharn/golang-module-tutorial
 
 ## go make 
 - https://tutorialedge.net/golang/makefiles-for-go-developers/
@@ -48,6 +50,13 @@ docker-compose ps
 docker-compose stop
 docker-compose start
 docker-compose down
+```
+## Go version 관리
+```bash
+gvm version
+gvm list
+gvm listall
+# rm -rf ~/.gvm
 ```
 
 ***

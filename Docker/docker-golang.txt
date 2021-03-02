@@ -1,5 +1,5 @@
 ***
-# Docker Go º≥¡§
+# Docker Go ÏÑ§Ï†ï
 
 XX docker run -it -v ${PWD}:/var/app/go --name mygo golang /bin/bash
 XXdocker run -it -v ${PWD}:/go --name mygo golang /bin/bash
@@ -7,7 +7,7 @@ docker run -it -v ${PWD}:/go/src --name mygo golang /bin/bash
 
 docker exec -it mygo /bin/bash
 
-## go git ∆–≈∞¡ˆ ¥ŸøÓ
+## go git Ìå®ÌÇ§ÏßÄ Îã§Ïö¥
  src> go get -u github.com/go-redis/redis
 
  [issue] go get gopkg > x509:certificate.....
@@ -19,7 +19,24 @@ docker exec -it mygo /bin/bash
 	go get -u -v -insecure go.opentelemetry.io/otel
 	go get -u -v -insecure github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace
 
-### git ø°º≠ https repository ø¨∞·Ω√ SSL ¿Œ¡ıº≠ ø¿∑˘ «ÿ∞·π˝
+### git ÏóêÏÑú https repository Ïó∞Í≤∞Ïãú SSL Ïù∏Ï¶ùÏÑú Ïò§Î•ò Ìï¥Í≤∞Î≤ï
  git config --global http.sslVerify false
  git config --global http.https://git.vertiv.life.sslVerify false
  export GIT_SSL_NO_VERIFY=0
+
+
+----------------------------------------------------------------------------------------
+// main.go
+package main
+
+import(
+    "fmt"
+    "time"
+)
+
+func main() {
+    for {
+        fmt.Println("Hello, world!")
+        time.Sleep(10 * time.Second)
+    }
+}

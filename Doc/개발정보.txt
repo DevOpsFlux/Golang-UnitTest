@@ -1,10 +1,12 @@
 
-go vergion [ go1.22.3 -> ���׷��̵�(�������̽�), go1.15.2 windows/amd64 ]
+go vergion [ go1.22.3 -> 업그레이드(의존성이슈), go1.15.2 windows/amd64 ]
 go env
 
 go build main.go
 go run main.go
 
+go list -m all : 최종버전의 직간접적인 디펜더시 리스트
+go mod tidy : 불필요한 종속성을 제거
 
  [issue] go get gopkg > x509:certificate.....
  https://github.com/golang/go/issues/18519
@@ -26,19 +28,21 @@ go get -u github.com/PuerkitoBio/goquery
 go get -u github.com/swaggo/swag/cmd/swag
 go get -u github.com/swaggo/echo-swagger
 
+go get -u github.com/sirupsen/logrus
+
 ----------------------------------------------------------------------
-# go git ��Ű�� �ٿ�
+# go git 패키지 다운
 D:\Works\Go\src>go get -u github.com/go-redis/redis
 D:\Works\Go\src>go get -u github.com/go-redis/redis/v8
 ----------------------------------------------------------------------
 
-# ��Ű�� ����
+# 패키지 생성
 /src/stringutil/stringutil.go
 go install stringutil
 
-GOPATH/pkg/�ü��_��Ű��ó ���͸��� stringutil.a ���̺귯�� ������ ����
+GOPATH/pkg/운영체제_아키텍처 디렉터리에 stringutil.a 라이브러리 파일이 생성
 
-������: GOPATH/pkg/linux_amd64
+리눅스: GOPATH/pkg/linux_amd64
 Mac OS X: GOPATH/pkg/darwin_amd64
 Windows: GOPATH/pkg/windows_amd64/calc.a
 
@@ -48,22 +52,102 @@ import (
 
 ----------------------------------------------------------------------
 
-# gin ��Ű������ govendor ��ġ
+# gin 패키지관리 govendor 설치
 - https://mmsesang.tistory.com/7
 $ go get github.com/kardianos/govendor
 $ govendor init
 $ govendor fetch github.com/gin-gonic/gin@v1.3
 
 
-gin �� main.go starting template
+gin 의 main.go starting template
 https://raw.githubusercontent.com/gin-gonic/examples/master/basic/main.go
  
-# go ���̳ʸ� ���� ���� ����
+# go 바이너리 실행 파일 생성
 > go build devgo.go
 > devgo.exe
 
+-----------------------------------------------------------------------
+# go 언어로 dll 만들기 [ request.go ]
+	package main
+	import (
+		"C"
+	)
+	func PrintTest(arg *C.char) *C.char {
+		input := C.GoString(arg)
+		return C.CString("입력한 값은 " + input + " 입니다")
+	}
+	func main() {
+	}
+
+# dll 빌드
+	$ go build -o request.dll -buildmode=c-shared
+
+# C# dll import 마샬링
+	// dll 선언 [DllImport("request.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.StdCall)] 
+	public static extern IntPtr PrintTest(byte[] data); 
+	// 사용하기 var pStr = PrintTest(Encoding.Default.GetBytes("FluxTest")); 
+	string str = Marshal.PtrToStringAnsi(pStr); 
+	Console.WriteLine(str);
+
+https://plming.tistory.com/210
+-----------------------------------------------------------------------
+
 ================================================================================================================================
 
+# go mod
+go list -m all	# 최종버전의 직간접적인 디펜더시 리스트
+
+go mod tidy		# 불필요한 종속성을 제거
+
+go mod init github.com/sirupsen/logrus
+go mod init go.opentelemetry.io/otel
+
+go mod vendor	# vendor 디렉토리를 만드는 옵션커맨드
+
+# 수동
+go get -u -v -insecure github.com/shharn/golang-module-tutorial
+
+-----------------------------------------------------------------------
+
+# go context
+https://jaehue.github.io/post/how-to-use-golang-context/
+
+# go-logger-rotation
+https://www.iditect.com/how-to/53758089.html
+https://golangbyexample.com/go-logger-rotation/
+
+# Go version 관리
+
+gvm version
+gvm list
+gvm listall
+
+# rm -rf ~/.gvm
+
+SHELL ["/bin/bash", "-c"]
+RUN touch /root/.bashrc && \
+    bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer) && \
+    source /root/.gvm/scripts/gvm && \
+    gvm install go1.4 -B && \
+    gvm use go1.4 && \
+    export GOROOT_BOOTSTRAP=$GOROOT && \
+    gvm install go1.15 && \
+    gvm use go1.15
+
+
+git config --global http.sslVerify false
+
+
+# go goroutine 
+http://golang.site/go/article/21-Go-%EB%A3%A8%ED%8B%B4-goroutine
+
+# go CPU 다중처리
+import "runtime" 
+func main() {
+    runtime.GOMAXPROCS(4) // 4개의 CPU 사용
+}
+
+=========================================================================================================
 Tools environment: GOPATH=D:\Works\Go\, GOBIN=C:\Go\bin
 Installing 16 tools at the configured GOBIN: C:\Go\bin in module mode.
   gocode

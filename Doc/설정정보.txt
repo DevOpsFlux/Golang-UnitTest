@@ -1,13 +1,101 @@
 
 
-# Windows VSCode�� ���� Go ���� ȯ�� ����
-https://velog.io/@ilcm96/windows-go-dev-env-setup-with-vscode
-
-# Go Path ����
+# Go Path 설정
 https://niceman.tistory.com/126
-
-# Gin ��ġ�� ���� ����
-https://dejavuqa.tistory.com/318
 
 # GoGetTools
 https://golang.org/s/gogetcmd
+
+
+***
+## go - Setup
+- go vergion [ go1.22.3 -> 업그레이드(의존성이슈), go1.15.2 windows/amd64 ]
+- https://golang.org/dl/
+
+## go path - Set
+- Path, GoBin, GoRoot, GoPath
+
+## go get
+- git package download
+```bash
+ go get -u github.com/go-redis/redis
+
+ [issue] go get gopkg > x509:certificate.....
+ https://github.com/golang/go/issues/18519
+ go get -u -v -insecure github.com/go-redis/redis
+```
+## go mod
+- Go modules
+https://tutorialedge.net/golang/go-modules-tutorial/
+go list -m all : 최종 버전의 직간접적인 디펜더시 리스트
+go mod tidy : 불필요한 종속성 제거
+
+## go make 
+- https://tutorialedge.net/golang/makefiles-for-go-developers/
+```bash
+ choco install make
+ make -v
+```
+## godoc
+```bash
+ godoc -v
+ godoc -http=localhost:6060
+ http://localhost:6060/pkg/
+ Go Documentation Server
+```
+## go 바이너리 실행 파일 생성
+```bash
+ go build devgo.go
+ devgo.exe
+```
+## docker-compose
+```bash
+docker-compose up --build -d
+docker-compose down
+```
+
+***
+## Go Web Framework
+
+- Gin
+https://github.com/gin-gonic/gin
+https://github.com/gin-gonic/examples
+# Gin 설치와 개발 설정
+https://dejavuqa.tistory.com/318
+
+- Echo
+https://github.com/labstack/echo
+https://github.com/pangpanglabs/echosample
+
+
+***
+## Windows VSCode를 통한 Go 개발 환경 구축
+https://velog.io/@ilcm96/windows-go-dev-env-setup-with-vscode
+
+## Plugin 정보
+GoDoc, GoDocBrowser : 패키지 문서 탐험
+GoRename : 이름 변경
+GoCoverage : 테스트 커버리지 측정
+GoLint : 오류 검사
+GoVert : 정적 오류 탐지
+GoErrCheck : 오류 검사
+GoImplements, GoCallees, GoReferrers : 고급 분석 도구
+
+---
+
+git config --global http.sslVerify false
+
+# go 패키지 관리
+https://www.joinc.co.kr/w/man/12/golang/mod
+
+# go Module을 사용하여 패키지 구성 방법 개선하기
+https://www.popit.kr/%EA%B3%A0-%EB%AA%A8%EB%93%88%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%ED%8C%A8%ED%82%A4%EC%A7%80-%EA%B5%AC%EC%84%B1-%EB%B0%A9%EB%B2%95-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0/
+
+# go goroutine 
+http://golang.site/go/article/21-Go-%EB%A3%A8%ED%8B%B4-goroutine
+
+# go CPU 다중처리
+import "runtime" 
+func main() {
+    runtime.GOMAXPROCS(4) // 4개의 CPU 사용
+}
