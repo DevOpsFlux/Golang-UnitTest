@@ -66,6 +66,7 @@ gvm listall
 https://github.com/bxcodec/go-clean-arch
 
 ## Go Web Framework
+https://awesome-go.com/#web-frameworks
 
 - Gin
 https://github.com/gin-gonic/gin
